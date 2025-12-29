@@ -203,7 +203,7 @@ const App = () => {
       >
         {/* --- Drag Overlay --- */}
         {isDragging && (
-          <div className="absolute inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center border-2 border-dashed border-accent m-4 rounded-xl animate-in fade-in duration-200">
+          <div className="absolute inset-0 z-50 bg-background/80 backdrop-blur-sm flex items-center justify-center border-2 border-accent m-4 rounded-xl animate-in fade-in duration-200">
             <div className="flex flex-col items-center gap-4 text-foreground/80">
               <div className="p-4 bg-accent/20 rounded-full">
                 <FileUp className="size-12" />
@@ -214,12 +214,12 @@ const App = () => {
         )}
 
         {/* Header */}
-        <header className="sticky top-0 border-b border-dashed border-accent/40 shrink-0 z-40 bg-background">
-          <div className="p-2 w-full max-w-3xl mx-auto border-b md:border-x border-dashed border-accent/40 flex items-center justify-center text-sm text-muted-foreground">
+        <header className="sticky top-0 border-b shrink-0 z-40 bg-background">
+          <div className="p-2 w-full max-w-3xl mx-auto border-b md:border-x flex items-center justify-center text-sm text-muted-foreground">
             <AlertCircle className="size-4 mr-2" /> V1 - Current Only Read Text
             Based PDF's
           </div>
-          <div className="h-16 w-full max-w-3xl mx-auto md:border-x border-dashed border-accent/40 flex items-center justify-between p-4 ">
+          <div className="h-16 w-full max-w-3xl mx-auto md:border-x flex items-center justify-between p-4">
             <div className="flex items-center">
               <Logo />
               <span className="text-2xl font-medium">PDF Chatbot</span>
@@ -228,9 +228,9 @@ const App = () => {
               <a
                 href={"https://github.com/yash-ag-online/pdf-chatbot"}
                 target="_blank"
-                className="rounded-sm bg-accent/40 p-2"
+                className="rounded-sm bg-accent p-2"
               >
-                <Github className="size-6" />
+                <Github className="size-5 text-background" />
               </a>
             </div>
           </div>
@@ -242,20 +242,20 @@ const App = () => {
         </div>
 
         {/* Chat */}
-        <div className="size-full flex-1 max-w-3xl mx-auto md:border-x border-dashed border-accent/40">
+        <div className="size-full flex-1 max-w-3xl mx-auto md:border-x bg-card/20 p-4">
           <Chat messages={messages} />
           <div ref={messagesEndRef}></div>
         </div>
 
         {/* Input */}
-        <div className="backdrop-blur-3xl sticky bottom-14 border-y border-dashed border-accent/40 md:bottom-10 shrink-0 flex flex-col justify-end">
+        <div className="backdrop-blur-3xl sticky bottom-14 border-y md:bottom-10 shrink-0 flex flex-col justify-end">
           {/* --- Claude-style File Preview --- */}
           {selectedFiles && selectedFiles.length > 0 && (
-            <div className="w-full max-w-3xl mx-auto pb-2 px-2 pt-2 md:border-x border-dashed border-accent/40 flex gap-2 overflow-x-auto">
+            <div className="w-full max-w-3xl mx-auto pb-2 px-2 pt-2 md:border-x flex gap-2 overflow-x-auto">
               {selectedFiles.map((file, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 bg-background border border-accent/40 rounded-md p-2 w-fit animate-in slide-in-from-bottom-2 fade-in shrink-0"
+                  className="flex items-center gap-2 bg-background border rounded-md p-2 w-fit animate-in slide-in-from-bottom-2 fade-in shrink-0"
                 >
                   <div className="bg-accent/10 p-1.5 rounded-sm">
                     <FileText className="size-4 text-accent" />
@@ -288,7 +288,7 @@ const App = () => {
             onChange={onFileInputChange}
           />
 
-          <form className="w-full max-w-3xl mx-auto bg-accent/40 p-2 flex items-end border-x border-dashed border-accent/40">
+          <form className="w-full max-w-3xl mx-auto bg-accent/70 p-2 flex items-end border-x">
             <div className="shrink-0 bg-background size-fit rounded-full">
               <button
                 type="button"
@@ -326,8 +326,8 @@ const App = () => {
         </div>
 
         {/* Footer */}
-        <footer className="sticky bottom-0 border-dashed border-accent/40 shrink-0 z-40 bg-background">
-          <div className="h-14 md:h-10 w-full max-w-3xl mx-auto md:border-x border-dashed border-accent/40 flex items-center justify-between p-4 gap-8 text-foreground/50 font-light text-sm ">
+        <footer className="sticky bottom-0 shrink-0 z-40 bg-background">
+          <div className="h-14 md:h-10 w-full max-w-3xl mx-auto md:border-x flex items-center justify-between p-4 gap-8 text-foreground/50 font-light text-sm ">
             <p className="text-balance">
               © 2025 Yash Agrawal - Full-stack Software Engineer
             </p>

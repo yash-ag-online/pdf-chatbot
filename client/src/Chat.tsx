@@ -6,7 +6,7 @@ const Chat = ({
   messages: { by: "user" | "ai"; message: string }[];
 }) => {
   return (
-    <div className="py-2 flex flex-col gap-4">
+    <div className="py-2 flex flex-col gap-8">
       {messages &&
         messages.length > 0 &&
         messages.map((m, idx) => (
@@ -19,9 +19,9 @@ const Chat = ({
             <div
               className={`${
                 m.by === "user"
-                  ? "text-right bg-background before:absolute before:inset-0 before:border-y before:border-l before:border-dashed before:border-accent/40 before:pointer-events-none"
+                  ? "text-right bg-card border border-accent/70"
                   : "text-left bg-foreground text-background"
-              } w-[90%] overflow-hidden relative p-4 shrink-0 block text-wrap`}
+              } w-[90%] overflow-hidden relative p-4 shrink-0 block text-wrap rounded-md text-lg font-light leading-relaxed`}
             >
               <div
                 className={`prose ${
